@@ -19,6 +19,7 @@ in
     bun
     direnv
     git
+    github-desktop
     gh
     wget
     zen
