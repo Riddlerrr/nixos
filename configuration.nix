@@ -36,6 +36,7 @@ in
     zen
 
     gnomeExtensions.astra-monitor
+    pciutils # for monitor
 
     unstable.opencode
     unstable.claude-code
