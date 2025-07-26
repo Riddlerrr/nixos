@@ -28,6 +28,7 @@ in
     ghostty
     lazydocker
     lazygit
+    slack
     thunderbird
     vscode
     wget
