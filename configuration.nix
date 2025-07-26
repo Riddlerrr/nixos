@@ -23,6 +23,7 @@ in
     git
     github-desktop
     gh
+    ghostty
     wget
     zen
     unstable.opencode
