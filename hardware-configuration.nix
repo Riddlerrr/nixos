@@ -43,4 +43,6 @@
     enable = true;
     enable32Bit = true;
   };
+
+  hardware.logitech.wireless.enable = true;
 }
