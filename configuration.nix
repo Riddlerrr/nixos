@@ -127,7 +127,7 @@ in
     git
     gh
     wget
-#    zen
+    zen
   ];
 
   fonts.packages = with pkgs; [
