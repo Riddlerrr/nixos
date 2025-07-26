@@ -28,8 +28,10 @@ in
     ghostty
     lazydocker
     lazygit
+    vscode
     wget
     zen
+
     unstable.opencode
   ];
 
