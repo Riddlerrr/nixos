@@ -29,6 +29,7 @@ in
     lazydocker
     lazygit
     slack
+    solaar # logi mouse setup
     thunderbird
     vscode
     wget
