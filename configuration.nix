@@ -13,6 +13,17 @@ in
       ./hardware-configuration.nix
     ];
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    bun
+    direnv
+    git
+    gh
+    wget
+    zen
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -119,17 +130,6 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    bun
-    direnv
-    git
-    gh
-    wget
-    zen
-  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
