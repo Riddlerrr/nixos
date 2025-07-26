@@ -6,6 +6,9 @@
 
 let
   zen = (builtins.getFlake "github:0xc000022070/zen-browser-flake").packages.x86_64-linux.default;
+  unstable = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
+    config = config.nixpkgs.config;
+  };
 in
 {
   imports =
@@ -20,9 +23,9 @@ in
     git
     github-desktop
     gh
-    opencode
     wget
     zen
+    unstable.opencode
   ];
 
   # Bootloader.
