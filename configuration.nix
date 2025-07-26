@@ -38,6 +38,9 @@ in
     gnomeExtensions.astra-monitor
     pciutils # for monitor
     wirelesstools
+    nethogs
+    iotop
+    gtop
 
     unstable.opencode
     unstable.claude-code
