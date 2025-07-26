@@ -131,12 +131,13 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
     nerd-fonts.meslo-lg
   ];
+
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
