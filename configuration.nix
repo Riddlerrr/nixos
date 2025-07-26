@@ -35,8 +35,10 @@ in
     wget
     zen
 
+    #  monitoring
     gnomeExtensions.astra-monitor
-    pciutils # for monitor
+    amdgpu_top
+    pciutils
     wirelesstools
     nethogs
     iotop
