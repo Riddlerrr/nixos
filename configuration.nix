@@ -16,11 +16,11 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bun
     direnv
     git
     github-desktop
     gh
+    opencode
     wget
     zen
   ];
