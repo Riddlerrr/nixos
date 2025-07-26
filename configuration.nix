@@ -33,6 +33,7 @@ in
     zen
 
     unstable.opencode
+    unstable.claude-code
   ];
 
   # Bootloader.
