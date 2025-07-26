@@ -35,6 +35,8 @@ in
     wget
     zen
 
+    gnomeExtensions.astra-monitor
+
     unstable.opencode
     unstable.claude-code
     unstable.telegram-desktop
