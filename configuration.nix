@@ -106,7 +106,7 @@ in
   users.users.sergei = {
     isNormalUser = true;
     description = "Sergei";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
@@ -147,6 +147,9 @@ in
 
   security.pam.services.gdm.enableGnomeKeyring = true;
 
+  virtualisation.docker = {
+    enable = true;
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
