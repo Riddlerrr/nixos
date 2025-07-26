@@ -36,6 +36,7 @@ in
 
     unstable.opencode
     unstable.claude-code
+    unstable.telegram-desktop
   ];
 
   # Bootloader.
