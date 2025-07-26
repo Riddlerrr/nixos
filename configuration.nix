@@ -25,6 +25,8 @@ in
     github-desktop
     gh
     ghostty
+    lazydocker
+    lazygit
     wget
     zen
     unstable.opencode
