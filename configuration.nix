@@ -37,6 +37,7 @@ in
 
     gnomeExtensions.astra-monitor
     pciutils # for monitor
+    wirelesstools
 
     unstable.opencode
     unstable.claude-code
