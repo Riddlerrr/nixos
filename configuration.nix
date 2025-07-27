@@ -26,6 +26,7 @@ in
     github-desktop
     gh
     ghostty
+    gnupg
     mise
     lazydocker
     lazygit
