@@ -26,6 +26,7 @@ in
     github-desktop
     gh
     ghostty
+    mise
     lazydocker
     lazygit
     slack
