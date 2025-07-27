@@ -37,6 +37,9 @@ in
     wget
     zen
 
+    # general programming languages
+    python3Full
+
     #  monitoring
     gnomeExtensions.astra-monitor
     amdgpu_top
