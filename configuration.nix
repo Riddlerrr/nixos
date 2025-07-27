@@ -39,6 +39,7 @@ in
 
     # general programming languages
     python3Full
+    gcc
 
     #  monitoring
     gnomeExtensions.astra-monitor
