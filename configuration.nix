@@ -42,6 +42,7 @@ in
     gcc
     gnumake
     zlib
+    openssl
 
     #  monitoring
     gnomeExtensions.astra-monitor
