@@ -37,10 +37,11 @@ in
     wget
     zen
 
-    # general programming languages
+    # general programming languages and libs needed to compile things
     python3Full
     gcc
     gnumake
+    zlib
 
     #  monitoring
     gnomeExtensions.astra-monitor
