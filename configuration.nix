@@ -40,6 +40,7 @@ in
     # general programming languages
     python3Full
     gcc
+    gnumake
 
     #  monitoring
     gnomeExtensions.astra-monitor
