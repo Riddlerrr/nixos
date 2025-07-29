@@ -28,7 +28,6 @@ in
     ghostty
     gnupg
     gnumake
-    mise
     lazydocker
     lazygit
     slack
@@ -50,6 +49,7 @@ in
 
     unstable.opencode
     unstable.claude-code
+    unstable.mise
     unstable.telegram-desktop
   ];
 
