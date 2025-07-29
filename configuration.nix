@@ -20,7 +20,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     direnv
-    docker
+    docker-compose
     google-chrome
     git
     github-desktop
