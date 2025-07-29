@@ -27,6 +27,7 @@ in
     gh
     ghostty
     gnupg
+    gnumake
     mise
     lazydocker
     lazygit
