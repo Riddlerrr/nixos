@@ -33,6 +33,7 @@ in
     slack
     solaar # logi mouse setup
     thunderbird
+    tmux
     rustdesk
     vscode
     wget
