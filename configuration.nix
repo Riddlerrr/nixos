@@ -39,9 +39,9 @@ in
     zen
 
     # general programming languages and libs needed to compile things
-    python3Full
-    gcc
-    gnumake
+    # python3Full
+    # gcc
+    # gnumake
 
     #  monitoring
     gnomeExtensions.astra-monitor
