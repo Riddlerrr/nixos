@@ -20,7 +20,6 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     direnv
-    docker-compose
     google-chrome
     git
     github-desktop
@@ -50,20 +49,11 @@ in
 
     unstable.opencode
     unstable.claude-code
-    unstable.mise
     unstable.telegram-desktop
   ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc
-    zlib
-    fuse3
-    icu
-    nss
-    openssl
-    curl
-    expat
   ];
 
   # Bootloader.
@@ -180,7 +170,7 @@ in
 
   security.pam.services.gdm.enableGnomeKeyring = true;
 
-  virtualisation.docker = {
+  virtualisation.podman = {
     enable = true;
   };
   # Some programs need SUID wrappers, can be configured further or are
