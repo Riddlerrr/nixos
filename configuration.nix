@@ -20,6 +20,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     direnv
+    distrobox
     google-chrome
     git
     github-desktop
