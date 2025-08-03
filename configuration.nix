@@ -28,6 +28,7 @@ in
     ghostty
     gnupg
     gnumake
+    neofetch
     lazydocker
     lazygit
     slack
