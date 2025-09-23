@@ -9,6 +9,7 @@ let
   unstable = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
     config = config.nixpkgs.config;
   };
+  vicinae = (builtins.getFlake "github:vicinaehq/vicinae").packages.x86_64-linux.default;
 in
 {
   imports =
@@ -37,7 +38,6 @@ in
     rustdesk
     vscode
     wget
-    zen
 
     #  monitoring
     gnomeExtensions.astra-monitor
@@ -47,6 +47,10 @@ in
     nethogs
     iotop
     gtop
+
+    # from flakes
+    zen
+    vicinae
 
     unstable.opencode
     unstable.claude-code
