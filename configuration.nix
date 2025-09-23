@@ -25,7 +25,6 @@ in
     git
     github-desktop
     gh
-    ghostty
     gnupg
     gnumake
     neofetch
@@ -52,6 +51,7 @@ in
     unstable.opencode
     unstable.claude-code
     unstable.telegram-desktop
+    unstable.ghostty
   ];
 
   programs.nix-ld.enable = true;
@@ -63,7 +63,6 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
