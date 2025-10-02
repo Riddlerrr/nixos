@@ -38,6 +38,7 @@ in
     rustdesk
     vscode
     wget
+    nodejs
 
     #  monitoring
     gnomeExtensions.astra-monitor
