@@ -43,11 +43,19 @@
     enable = true;
     enable32Bit = true;
   };
-	# services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
-	# hardware.nvidia = {
-	#   modesetting.enable = true;
-	#   open = true;
-	#  };
+	services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+	hardware.nvidia = {
+	  modesetting.enable = true;
+	  open = false;
+		powerManagement.enable = true;
+
+    prime = {
+      amdgpuBusId = "PCI:11:0:0";
+			nvidiaBusId = "PCI:1:0:0";
+    
+			offload.enable = true;  # AMD is main, Nvidia for CUDA
+		};
+	 };
 
   hardware.logitech.wireless.enable = true;
 }
