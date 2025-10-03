@@ -49,6 +49,9 @@ in
     iotop
     gtop
 
+    # containers
+    nvidia-container-toolkit
+
     # from flakes
     zen
     vicinae
