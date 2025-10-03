@@ -43,12 +43,12 @@
     enable = true;
     enable32Bit = true;
   };
-	# services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
-	# hardware.nvidia = {
-	#   modesetting.enable = true;
-	#   open = false;
-	# 	powerManagement.enable = true;
-	#  };
+	services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+	hardware.nvidia = {
+	  modesetting.enable = true;
+	  open = false;
+		powerManagement.enable = true;
+	 };
 
   hardware.logitech.wireless.enable = true;
 }
