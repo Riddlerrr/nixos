@@ -49,6 +49,7 @@
 	  open = false;
 		powerManagement.enable = true;
 	 };
+	 hardware.nvidia-container-toolkit.enable = true; # Nvidia should work from podman containers
 
   hardware.logitech.wireless.enable = true;
 }
