@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -43,19 +43,12 @@
     enable = true;
     enable32Bit = true;
   };
-	services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
-	hardware.nvidia = {
-	  modesetting.enable = true;
-	  open = false;
-		powerManagement.enable = true;
-
-    prime = {
-      amdgpuBusId = "PCI:11:0:0";
-			nvidiaBusId = "PCI:1:0:0";
-    
-			offload.enable = true;  # AMD is main, Nvidia for CUDA
-		};
-	 };
+	# services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+	# hardware.nvidia = {
+	#   modesetting.enable = true;
+	#   open = false;
+	# 	powerManagement.enable = true;
+	#  };
 
   hardware.logitech.wireless.enable = true;
 }
