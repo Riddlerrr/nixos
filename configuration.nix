@@ -52,6 +52,10 @@ in
     # containers
     nvidia-container-toolkit
 
+    # CUDA
+    cudaPackages.cudatoolkit
+    cudaPackages.cudnn
+
     # from flakes
     zen
     vicinae
