@@ -31,6 +31,9 @@
 
   hardware.logitech.wireless.enable = true;
 
+  # enable trim for SSD
+	services.fstrim.enable = true;
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/056fa932-4db5-479f-be7b-965df4406786";
       fsType = "ext4";
