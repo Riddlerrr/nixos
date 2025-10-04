@@ -8,6 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+	boot.kernelPackages = pkgs.linuxPackages_6_6; # LTS kernel for stability of NVIDIA drivers
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.blacklistedKernelModules = [ "k10temp" ];
   boot.kernelModules = [ "kvm-amd" "amd-pstate" "zenpower" ];
