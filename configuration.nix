@@ -60,6 +60,7 @@ in
     unstable.claude-code
     unstable.telegram-desktop
     unstable.ghostty
+    unstable.uv # python support
   ];
 
   programs.nix-ld.enable = true;
