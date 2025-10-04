@@ -9,20 +9,19 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-	# disable built-in GPU
-  boot.blacklistedKernelModules = [ "k10temp" "amdgpu" "radeon" ];
+  boot.blacklistedKernelModules = [ "k10temp" ];
   boot.kernelModules = [ "kvm-amd" "amd-pstate" "zenpower" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.zenpower ];
 	boot.kernelParams = [ 
 	  "initcall_blacklist=acpi_cpufreq_init" 
 		"amd_pstate=active" 
 		"nvidia-drm.modeset=1"
-		"amdgpu.dc=0"
   ];
 
+  hardware.amdgpu.initrd.enable = true;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-	services.xserver.videoDrivers = [ "nvidia" ];
+	services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -31,7 +30,11 @@
 	  modesetting.enable = true;
 	  open = false;
 		powerManagement.enable = true;
-		forceFullCompositionPipeline = true;
+	  prime = {
+      sync.enable = true;
+      amdgpuBusId = "PCI:17:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
 	};
 	hardware.nvidia-container-toolkit.enable = true; # Nvidia should work from podman containers
 
