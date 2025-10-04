@@ -9,13 +9,15 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.blacklistedKernelModules = [ "k10temp" ];
+	# disable built-in GPU
+  boot.blacklistedKernelModules = [ "k10temp" "amdgpu" "radeon" ];
   boot.kernelModules = [ "kvm-amd" "amd-pstate" "zenpower" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.zenpower ];
 	boot.kernelParams = [ 
 	  "initcall_blacklist=acpi_cpufreq_init" 
 		"amd_pstate=active" 
 		"nvidia-drm.modeset=1"
+		"amdgpu.dc=0"
   ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -29,6 +31,7 @@
 	  modesetting.enable = true;
 	  open = false;
 		powerManagement.enable = true;
+		forceFullCompositionPipeline = true;
 	};
 	hardware.nvidia-container-toolkit.enable = true; # Nvidia should work from podman containers
 
