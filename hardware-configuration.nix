@@ -12,12 +12,15 @@
   boot.blacklistedKernelModules = [ "k10temp" ];
   boot.kernelModules = [ "kvm-amd" "amd-pstate" "zenpower" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.zenpower ];
-	boot.kernelParams = [ "initcall_blacklist=acpi_cpufreq_init" "amd_pstate=active" ];
+	boot.kernelParams = [ 
+	  "initcall_blacklist=acpi_cpufreq_init" 
+		"amd_pstate=active" 
+		"nvidia-drm.modeset=1"
+  ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 	services.xserver.videoDrivers = [ "nvidia" ];
-	hardware.amdgpu.initrd.enable = lib.mkDefault true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
