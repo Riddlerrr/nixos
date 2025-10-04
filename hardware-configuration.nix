@@ -28,7 +28,7 @@
   };
 	hardware.nvidia = {
 	  modesetting.enable = true;
-	  open = true;
+	  open = false;
 		powerManagement.enable = true;
 	  prime = {
       sync.enable = true;
