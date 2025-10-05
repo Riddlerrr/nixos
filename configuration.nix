@@ -58,7 +58,7 @@ in
 
     # from flakes
     zen
-    vicinae
+    # vicinae
 
     unstable.opencode
     unstable.claude-code
@@ -186,7 +186,6 @@ in
 
   virtualisation.podman = {
     enable = true;
-    enableNvidia = true;
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
