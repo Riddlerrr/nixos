@@ -21,14 +21,14 @@
   hardware.amdgpu.initrd.enable = true;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-	services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+	services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 	hardware.nvidia = {
 	  modesetting.enable = true;
-	  open = true;
+	  open = false;
 		powerManagement.enable = true;
 	  prime = {
       sync.enable = true;
