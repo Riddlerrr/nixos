@@ -11,11 +11,9 @@
 	# boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.blacklistedKernelModules = [ "k10temp" ];
-  boot.kernelModules = [ "kvm-amd" "amd-pstate" "zenpower" ];
+  boot.kernelModules = [ "kvm-amd"  "zenpower" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.zenpower ];
 	boot.kernelParams = [ 
-	  "initcall_blacklist=acpi_cpufreq_init" 
-		"amd_pstate=active" 
 		"nvidia-drm.modeset=1"
   ];
 
