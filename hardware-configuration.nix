@@ -13,11 +13,8 @@
   boot.blacklistedKernelModules = [ "k10temp" ];
   boot.kernelModules = [ "kvm-amd"  "zenpower" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.zenpower ];
-	boot.kernelParams = [ 
-		"nvidia-drm.modeset=1"
-  ];
+	boot.kernelParams = [ ];
 
-  # hardware.amdgpu.initrd.enable = true;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 	services.xserver.videoDrivers = [ "nvidia" ];
@@ -27,22 +24,16 @@
   };
 	hardware.nvidia = {
 		package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-		    version = "580.95.05";
-		    sha256_64bit = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
+      version = "580.95.05"; # works with 6.17 kernel and open=false drivers only
+      sha256_64bit = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
 			sha256_aarch64 = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
 			openSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
-		    settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+			settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
 			persistencedSha256 = "sha256-hdszsACWNqkCh8G4VBNitDT85gk9gJe1BlQ8LdrYIkg=";
 		};
-		# package = config.boot.kernelPackages.nvidiaPackages.stable;
 	  modesetting.enable = true;
 	  open = false;
 		powerManagement.enable = true;
-	  # prime = {
-	  #    sync.enable = true;
-	  #    amdgpuBusId = "PCI:17:0:0";
-	  #    nvidiaBusId = "PCI:1:0:0";
-	  #  };
 	};
 	hardware.nvidia-container-toolkit.enable = true; # Nvidia should work from podman containers
 
