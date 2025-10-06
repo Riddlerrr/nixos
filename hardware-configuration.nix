@@ -17,7 +17,7 @@
 		"nvidia-drm.modeset=1"
   ];
 
-  hardware.amdgpu.initrd.enable = true;
+  # hardware.amdgpu.initrd.enable = true;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 	services.xserver.videoDrivers = [ "nvidia" ];
@@ -38,11 +38,11 @@
 	  modesetting.enable = true;
 	  open = true;
 		powerManagement.enable = true;
-	  prime = {
-      sync.enable = true;
-      amdgpuBusId = "PCI:17:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
+	  # prime = {
+	  #    sync.enable = true;
+	  #    amdgpuBusId = "PCI:17:0:0";
+	  #    nvidiaBusId = "PCI:1:0:0";
+	  #  };
 	};
 	hardware.nvidia-container-toolkit.enable = true; # Nvidia should work from podman containers
 
